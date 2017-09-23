@@ -1,0 +1,15 @@
+<section class="container">
+<div class="row">
+    <div class="col-md-12 ">
+<app-add-account></app-add-account>
+      <hr>
+
+
+      <app-view-account
+        *ngFor="let acc of accounts; let i = index"
+        [account]="acc"
+        [id]="i" ></app-view-account>
+    </div>
+
+</div>
+</section>
