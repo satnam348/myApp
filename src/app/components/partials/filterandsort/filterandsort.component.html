@@ -1,0 +1,63 @@
+<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" id="filter-and-sort">
+  <div class="btn-group filterDropdown" [ngClass]="{'with-border' : filterMenuIsOpen }">
+    <button id="dropdownMenu1" type="button" class="btn btn-default dropdown-toggle" [ngClass]="{'no-border Mozilla-left-0' : filterMenuIsOpen}"
+      (click)="toggleFilterMenu()" tabindex="0" role="button">
+ <span class="text">Filter</span>
+ <i class="fa fa-2x fa-angle-down bdr-lt"
+ [ngClass]="{'fa-angle-down' : !filterMenuIsOpen , 'fa-angle-up' : filterMenuIsOpen, 'bdr-lt' : ( isMobileView() && !filterMenuIsOpen) }"></i>
+</button>
+<span tabindex="-1" class="close-filter">
+  <i tabindex="0" class="fa fa-times" title="Close"
+     [hidden]="(!filterMenuIsOpen && !isMobileView())"
+      (click)="toggleFilterMenu()"> </i>
+</span>
+    <div class="col-md-12 col-sm-12 col-xs-12 m-t-50 filter-menu" aria-labelledby="dropdownMenu1" tabindex="-1" [ngClass]="{'filter-menu' : ! isMobileView() }"
+      (click)="ignoreClick($event)" [hidden]="!filterMenuIsOpen" role="button" aria-hidden="false">
+      <div class="row">
+
+        <div class="border-left category-wrapper ng-scope col-md-10 col-sm-10">
+          satnam
+        </div>
+      </div>
+    </div>
+
+    </div>
+    <div class="pull-right btn-group filterDropdown sortControl" *ngIf="!filterMenuIsOpen" [ngClass]="{'open' : sortMenuIsOpen}" aria-hidden="false"><button id="sort" type="button" class="btn btn-default dropdown-toggle" (click)="toggleSortMenu()" tabindex="0" role="button"><span class="text">Featured</span>
+    <i class="fa fa-2x fa-angle-down bdr-lt"
+     [ngClass]="{'fa-angle-down' : !sortMenuIsOpen , 'fa-angle-up' : sortMenuIsOpen,
+     'bdr-lt' : (isMobileView() && !sortMenuIsOpen)}"></i></button>
+      <ul class="dropdown-menu sort-menu">
+
+        <li tabindex="-1" class="pointer   selected">
+          <a> Featured </a> </li>
+        <li tabindex="-1" class="pointer   selected">
+          <a>Featured</a></li>
+        <li tabindex="-1" class="pointer   selected">
+          <a>Featured</a></li>
+
+      </ul>
+    </div>
+  </div>
+
+
+
+  <div class="col-md-6 col-sm-4 col-xs-12 viewSection" role="article">
+    <strong class="xsmall">You're Viewing:</strong>
+    <span class="xsmall ng-scope"> All </span>
+
+  </div>
+
+  <div class="col-md-6 col-sm-8 col-xs-12 xsmall" role="article">
+
+    <div role="list">
+      <span class="results-count itmsPerPage pull-right" aria-hidden="false"><span class="xsmall">Results per page :</span>
+      <ul class="itemsPerPage">
+        <li>12</li>
+        <li>36</li>
+        <li>73</li>
+        <li>12</li>
+      </ul>
+      </span>
+    </div>
+
+  </div>
