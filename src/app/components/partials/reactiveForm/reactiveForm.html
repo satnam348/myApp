@@ -1,7 +1,6 @@
-<section class="row">
-    <app-filterandsort></app-filterandsort>
-    <div class="col-md-12">
-        <h1>I am a Reactive form</h1>
+<section class="container">
+    <div class="inner">
+        <h1><ng-content> </ng-content></h1>
         <form [formGroup]="myForm" (ngSubmit)="onSubmit(myForm)">
             <div class="form-group ">
                 <label for="name">Name</label>

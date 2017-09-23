@@ -1,4 +1,5 @@
-import { Component, OnInit, Input,Output, EventEmitter } from '@angular/core';
+import { ArrayType } from '@angular/compiler/src/output/output_ast';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 
 @Component({
     selector: 'data-grid',
@@ -6,7 +7,7 @@ import { Component, OnInit, Input,Output, EventEmitter } from '@angular/core';
 
 })
 export class DataGridComponent implements OnInit {
-    @Input() dataList: any;
+    @Input() dataList= [] ;
      @Output() userUpdated = new EventEmitter();
 
 
@@ -14,11 +15,11 @@ export class DataGridComponent implements OnInit {
      this.userUpdated.emit();
   }
 
- 
+
   ngOnInit() {
 
-   
-    
+
+
   }
 remove(index)
 {

@@ -1,11 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl , Validators } from '@angular/forms';
-import {DataGridComponent} from '../data-grid/data-grid';
+import {DataGridComponent} from '../data-grid/data-grid'
 
 
 @Component({
   selector: 'reactive-form',
-  templateUrl: './reactiveForm.html'
+  templateUrl: './reactiveForm.html',
 })
 export class reactiveFormComponent implements OnInit {
   myForm: FormGroup;
@@ -22,7 +22,7 @@ export class reactiveFormComponent implements OnInit {
       address: new FormGroup({
       city: new FormControl('jammu'),
       pin: new FormControl('112456')
-      })
+      }),
     });
 
    }
@@ -34,7 +34,8 @@ export class reactiveFormComponent implements OnInit {
     this.formObject.push(form.value);
     localStorage.setItem('data', JSON.stringify(this.formObject));
    // this.myForm.reset();
-    }
+
+  }
   handleUserUpdated(user) {
    this.myForm = new FormGroup({
       name: new FormControl(user.name, Validators.required),
@@ -43,7 +44,8 @@ export class reactiveFormComponent implements OnInit {
       address: new FormGroup({
       city: new FormControl(user.address.city),
       pin: new FormControl(user.address.pin)
-      })
-      });
+      }),
+
+    });
   }
 }
