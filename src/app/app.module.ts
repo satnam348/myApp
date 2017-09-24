@@ -50,7 +50,7 @@ const routes: Routes = [
 
     ReactiveFormsModule,
     FormsModule,
-     RouterModule.forRoot(routes, { useHash: flase}),
+     RouterModule.forRoot(routes, { useHash: false}),
   ],
   providers: [RequestService, AccountsService, LoggingService],
   bootstrap: [AppComponent]
